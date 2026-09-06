@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Athar — HSE & Safety Officer</title>
+<meta name="description" content="Muhammad Athar — HSE & Safety Officer with 2+ years experience. Open to Gulf-based roles in Saudi Arabia, UAE & Qatar. NEBOSH, OSHA, IOSH certified.">
+<meta name="author" content="Muhammad Athar">
+<meta property="og:title" content="Muhammad Athar — HSE & Safety Officer">
+<meta property="og:description" content="2+ years keeping construction and infrastructure sites incident-free. Open to relocate to the Gulf.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://athar312.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c1015;
+    --bg-alt:#131920;
+    --bg-card:#1a222d;
+    --line:#2a3544;
+    --text:#eef2f6;
+    --muted:#8b9bab;
+    --amber:#f2a91b;
+    --amber-soft:rgba(242,169,27,0.18);
+    --amber-ink:#1a1305;
+    --steel:#5b8aa0;
+    --maxw:920px;
+    --nav-h:60px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans',sans-serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk',sans-serif;
+    font-weight:700;
+    letter-spacing:-0.02em;
+  }
+  a{color:var(--amber);text-decoration:none;transition:color .25s;}
+  a:hover{color:#ffc107;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--amber);outline-offset:3px;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    height:var(--nav-h);
+    background:rgba(12,16,21,0.8);
+    backdrop-filter:blur(16px);
+    border-bottom:1px solid transparent;
+    transition:all .35s ease;
+  }
+  .nav.scrolled{
+    border-bottom-color:var(--line);
+    background:rgba(12,16,21,0.95);
+    box-shadow:0 4px 30px rgba(0,0,0,0.3);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:0 24px;
+    height:100%;display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-logo{
+    font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;
+    color:var(--text);letter-spacing:-0.01em;
+  }
+  .nav-logo span{color:var(--amber);}
+  .nav-links{display:flex;gap:4px;list-style:none;}
+  .nav-links a{
+    color:var(--muted);font-size:0.9rem;font-weight:500;
+    padding:7px 14px;border-radius:8px;transition:all .25s;
+  }
+  .nav-links a:hover,.nav-links a.active{
+    color:var(--text);background:var(--amber-soft);
+  }
+  .nav-toggle{
+    display:none;background:none;border:none;color:var(--text);
+    font-size:1.5rem;cursor:pointer;padding:4px;
+  }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  section{padding:80px 0;}
+  .stripe{
+    height:5px;border-radius:3px;
+    background:repeating-linear-gradient(45deg,var(--amber) 0 8px,var(--amber-ink) 8px 16px);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:var(--bg-alt);
+    border-bottom:1px solid var(--line);
+    padding-top:calc(var(--nav-h) + 56px);
+    padding-bottom:64px;
+    position:relative;overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;top:-150px;right:-100px;
+    width:450px;height:450px;border-radius:50%;
+    background:radial-gradient(circle,rgba(242,169,27,0.09) 0%,transparent 65%);
+    pointer-events:none;
+    animation:floatGlow 8s ease-in-out infinite;
+  }
+  .hero::after{
+    content:'';position:absolute;bottom:-80px;left:-60px;
+    width:280px;height:280px;border-radius:50%;
+    background:radial-gradient(circle,rgba(91,138,160,0.07) 0%,transparent 70%);
+    pointer-events:none;
+    animation:floatGlow 10s ease-in-out infinite reverse;
+  }
+  @keyframes floatGlow{
+    0%,100%{transform:translate(0,0) scale(1);}
+    50%{transform:translate(20px,-15px) scale(1.05);}
+  }
+
+  .eyebrow{
+    color:var(--steel);font-size:0.95rem;font-weight:500;
+    margin-bottom:14px;display:inline-flex;align-items:center;gap:10px;
+    opacity:0;transform:translateY(20px);
+    animation:fadeUp 0.7s ease forwards 0.2s;
+  }
+  .eyebrow .dot{
+    width:10px;height:10px;border-radius:50%;
+    background:#22c55e;
+    box-shadow:0 0 0 0 rgba(34,197,94,0.5);
+    animation:livePulse 2s infinite;
+  }
+  @keyframes livePulse{
+    0%{box-shadow:0 0 0 0 rgba(34,197,94,0.5);}
+    70%{box-shadow:0 0 0 10px rgba(34,197,94,0);}
+    100%{box-shadow:0 0 0 0 rgba(34,197,94,0);}
+  }
+
+  .hero h1{
+    font-size:clamp(2.2rem,7vw,3.3rem);
+    line-height:1.12;margin-bottom:8px;
+    opacity:0;transform:translateY(30px);
+    animation:fadeUp 0.8s ease forwards 0.35s;
+  }
+  .hero .role{
+    font-size:1.2rem;color:var(--muted);font-weight:500;
+    opacity:0;transform:translateY(25px);
+    animation:fadeUp 0.8s ease forwards 0.5s;
+  }
+  .hero .rule{
+    width:60px;margin:22px 0;border-radius:3px;
+    opacity:0;transform:scaleX(0);transform-origin:left;
+    animation:scaleIn 0.6s ease forwards 0.7s;
+  }
+  .hero .tagline{
+    max-width:56ch;font-size:1.08rem;color:var(--text);
+    opacity:0;transform:translateY(20px);
+    animation:fadeUp 0.8s ease forwards 0.85s;
+    margin-bottom:36px;
+  }
+
+  .stats{
+    display:grid;grid-template-columns:repeat(3,1fr);
+    gap:16px;max-width:500px;margin-bottom:36px;
+    opacity:0;transform:translateY(25px);
+    animation:fadeUp 0.8s ease forwards 1s;
+  }
+  .stat{
+    background:var(--bg-card);border:1px solid var(--line);
+    border-radius:12px;padding:18px 14px;text-align:center;
+    transition:all .35s cubic-bezier(0.34,1.56,0.64,1);
+    position:relative;overflow:hidden;
+  }
+  .stat::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(135deg,rgba(242,169,27,0.08),transparent);
+    opacity:0;transition:opacity .35s;
+  }
+  .stat:hover{
+    transform:translateY(-6px) scale(1.02);
+    border-color:var(--amber);
+    box-shadow:0 12px 30px rgba(242,169,27,0.15);
+  }
+  .stat:hover::before{opacity:1;}
+  .stat b{
+    font-family:'Space Grotesk',sans-serif;font-size:1.7rem;
+    display:block;color:var(--amber);
+  }
+  .stat span{color:var(--muted);font-size:0.82rem;}
+
+  .actions{
+    display:flex;flex-wrap:wrap;gap:12px;
+    opacity:0;transform:translateY(20px);
+    animation:fadeUp 0.8s ease forwards 1.15s;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    border:1px solid var(--line);padding:12px 22px;
+    font-size:0.95rem;font-weight:500;color:var(--text);
+    border-radius:10px;background:transparent;
+    transition:all .3s cubic-bezier(0.34,1.56,0.64,1);cursor:pointer;
+  }
+  .btn:hover{
+    border-color:var(--amber);transform:translateY(-3px);
+    text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  }
+  .btn.primary{
+    background:var(--amber);color:var(--amber-ink);
+    border-color:var(--amber);font-weight:600;
+  }
+  .btn.primary:hover{
+    background:#ffb52e;
+    box-shadow:0 8px 25px rgba(242,169,27,0.4);
+    transform:translateY(-3px) scale(1.03);
+  }
+  .btn svg{width:17px;height:17px;}
+
+  @keyframes fadeUp{
+    to{opacity:1;transform:translateY(0);}
+  }
+  @keyframes scaleIn{
+    to{opacity:1;transform:scaleX(1);}
+  }
+
+  /* ---------- SECTIONS ---------- */
+  h2.section-title{
+    font-size:1.6rem;margin-bottom:10px;
+    display:flex;align-items:center;gap:14px;
+  }
+  h2.section-title::after{
+    content:'';flex:1;height:1px;background:var(--line);max-width:140px;
+  }
+  .section-sub{color:var(--muted);margin-bottom:32px;max-width:58ch;font-size:0.95rem;}
+
+  #about p{max-width:64ch;font-size:1.05rem;}
+  #about p + p{margin-top:16px;}
+
+  /* Certificates */
+  .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;}
+  .cert{
+    border:1px solid var(--line);border-left:4px solid var(--amber);
+    padding:22px;background:var(--bg-card);border-radius:0 12px 12px 0;
+    transition:all .4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .cert:hover{
+    transform:translateY(-8px);
+    box-shadow:0 16px 40px rgba(0,0,0,0.3);
+    border-left-color:#ffc107;
+  }
+  .cert .ref{font-size:0.75rem;color:var(--steel);font-weight:600;letter-spacing:0.05em;}
+  .cert h3{font-size:1.08rem;margin-top:8px;}
+  .cert .issuer{color:var(--muted);font-size:0.88rem;margin-top:6px;}
+
+  /* Timeline */
+  .timeline{position:relative;padding-left:32px;border-left:2px solid var(--line);}
+  .tl-item{position:relative;padding-bottom:40px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';position:absolute;left:-39px;top:6px;
+    width:14px;height:14px;border-radius:50%;
+    background:var(--amber);border:3px solid var(--bg);
+    box-shadow:0 0 0 3px var(--amber);
+    transition:transform .3s;
+  }
+  .tl-item:hover::before{transform:scale(1.25);}
+  .tl-item .when{font-size:0.8rem;color:var(--steel);font-weight:600;letter-spacing:0.04em;}
+  .tl-item h3{font-size:1.1rem;margin-top:5px;}
+  .tl-item .where{color:var(--muted);font-size:0.9rem;margin-top:3px;}
+  .tl-item p{margin-top:10px;font-size:0.96rem;opacity:0.92;}
+
+  /* Competencies */
+  .comp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;}
+  .comp{
+    display:flex;gap:16px;align-items:flex-start;
+    background:var(--bg-card);border:1px solid var(--line);
+    border-radius:12px;padding:20px 18px;
+    transition:all .4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  .comp:hover{
+    transform:translateY(-6px);
+    border-color:var(--amber);
+    box-shadow:0 12px 32px rgba(242,169,27,0.12);
+  }
+  .comp svg{
+    flex:none;width:28px;height:28px;color:var(--amber);margin-top:2px;
+    transition:transform .35s;
+  }
+  .comp:hover svg{transform:scale(1.15) rotate(-5deg);}
+  .comp h3{font-size:1rem;margin-bottom:4px;}
+  .comp p{color:var(--muted);font-size:0.88rem;}
+
+  /* Contact */
+  .contact{background:var(--bg-alt);border-top:1px solid var(--line);}
+  .contact h2{font-size:1.7rem;margin-bottom:12px;}
+  .contact p{color:var(--muted);max-width:52ch;margin-bottom:30px;}
+
+  footer{padding:30px 0;text-align:center;}
+  footer p{color:var(--muted);font-size:0.85rem;}
+
+  /* ---------- SCROLL REVEAL (stronger) ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1),
+                transform 0.8s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+  }
+  .reveal-delay-1{transition-delay:.12s;}
+  .reveal-delay-2{transition-delay:.24s;}
+  .reveal-delay-3{transition-delay:.36s;}
+
+  /* ---------- MOBILE ---------- */
+  @media(max-width:720px){
+    .nav-links{
+      display:none;position:absolute;top:var(--nav-h);left:0;right:0;
+      background:var(--bg-alt);flex-direction:column;padding:14px;
+      border-bottom:1px solid var(--line);
+      animation:slideDown .3s ease;
+    }
+    .nav-links.open{display:flex;}
+    @keyframes slideDown{
+      from{opacity:0;transform:translateY(-10px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    .nav-toggle{display:block;}
+    .stats{grid-template-columns:1fr 1fr 1fr;gap:10px;}
+    .stat{padding:14px 8px;}
+    .stat b{font-size:1.35rem;}
+    section{padding:56px 0;}
+    .hero{padding-top:calc(var(--nav-h) + 40px);}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">Athar<span>.</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#competencies">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      Available for Gulf-based roles
+    </div>
+    <h1>Muhammad Athar</h1>
+    <div class="role">HSE &amp; Safety Officer</div>
+    <div class="rule stripe"></div>
+    <p class="tagline">Two years keeping construction and infrastructure sites incident-free — now looking to bring that discipline to a site in the Gulf.</p>
+
+    <div class="stats">
+      <div class="stat"><b data-count="2">0</b><span>Years HSE</span></div>
+      <div class="stat"><b data-count="6">0</b><span>Certifications</span></div>
+      <div class="stat"><b>GCC</b><span>Open to relocate</span></div>
+    </div>
+
+    <div class="actions">
+      <a class="btn primary" href="mailto:princeathar312@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        Email me
+      </a>
+      <a class="btn" href="cv.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download CV
+      </a>
+      <a class="btn" href="https://www.linkedin.com/in/muhammad-athar-ba35a1257" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title reveal">About</h2>
+    <p class="reveal">I'm a Safety Officer based in Punjab, Pakistan, with two years across construction, infrastructure, and manufacturing sites — at NESPAK, TMT, and M. Saddique Ch &amp; Co. My day-to-day centres on permit-to-work systems, job safety analysis, and site-level risk assessment: the groundwork that keeps a project moving without an incident report.</p>
+    <p class="reveal">I'm currently working through a BS degree alongside my HSE certifications, and actively looking for a Safety Officer or HSE role with a contractor in Saudi Arabia, the UAE, or Qatar.</p>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="section-title reveal">Certifications &amp; Training</h2>
+    <p class="section-sub reveal">Formal qualifications backing the day-to-day work.</p>
+    <div class="certs">
+      <div class="cert reveal">
+        <div class="ref">REF 01</div>
+        <h3>NEBOSH IGC</h3>
+        <div class="issuer">NEBOSH (UK) — International General Certificate in Occupational Health &amp; Safety</div>
+      </div>
+      <div class="cert reveal reveal-delay-1">
+        <div class="ref">REF 02</div>
+        <h3>OSHA 30-Hour</h3>
+        <div class="issuer">OSHA (US) — Construction Safety &amp; Health</div>
+      </div>
+      <div class="cert reveal reveal-delay-2">
+        <div class="ref">REF 03</div>
+        <h3>IOSH Managing Safely</h3>
+        <div class="issuer">IOSH (UK) — Safety leadership for supervisors &amp; managers</div>
+      </div>
+      <div class="cert reveal">
+        <div class="ref">REF 04</div>
+        <h3>Risk Assessment</h3>
+        <div class="issuer">Highfield — Practical hazard &amp; risk evaluation</div>
+      </div>
+      <div class="cert reveal reveal-delay-1">
+        <div class="ref">REF 05</div>
+        <h3>Emergency First Aid at Work</h3>
+        <div class="issuer">Highfield — Workplace first response</div>
+      </div>
+      <div class="cert reveal reveal-delay-2">
+        <div class="ref">REF 06</div>
+        <h3>Fire Safety</h3>
+        <div class="issuer">Highfield — Fire prevention &amp; response</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="timeline">
+      <div class="tl-item reveal">
+        <div class="when">DEC 2025 — PRESENT</div>
+        <h3>Safety Officer, M. Saddique Ch &amp; Co (MSC)</h3>
+        <div class="where">Sargodha, Pakistan</div>
+        <p>Site-level HSE monitoring, worker inductions, and inspection records for an active project.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">MAR 2025 — OCT 2025</div>
+        <h3>Safety Assistant, Tayyab Manzoor Tarar (TMT)</h3>
+        <div class="where">Lahore, Pakistan</div>
+        <p>Supported permit-to-work issuance and daily site safety walks.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">JAN 2024 — FEB 2025</div>
+        <h3>Safety Officer, NESPAK</h3>
+        <div class="where">Karachi, Pakistan</div>
+        <p>Started HSE career on infrastructure design-and-supervision projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETENCIES -->
+<section id="competencies">
+  <div class="wrap">
+    <h2 class="section-title reveal">Core Competencies</h2>
+    <div class="comp-grid">
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
+        <div>
+          <h3>Job Safety Analysis (JSA)</h3>
+          <p>Breaking tasks into steps and controls before work starts.</p>
+        </div>
+      </div>
+      <div class="comp reveal reveal-delay-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div>
+          <h3>Permit-to-Work (PTW) Systems</h3>
+          <p>Issuing and closing permits for hazardous tasks.</p>
+        </div>
+      </div>
+      <div class="comp reveal reveal-delay-2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div>
+          <h3>Risk Assessment</h3>
+          <p>Rating hazards and setting controls that hold up on site.</p>
+        </div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="6"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
+        <div>
+          <h3>Confined Space Entry</h3>
+          <p>Entry permits, atmospheric testing, and standby rescue plans.</p>
+        </div>
+      </div>
+      <div class="comp reveal reveal-delay-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="22"/><line x1="18" y1="2" x2="18" y2="22"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="11" x2="18" y2="11"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+        <div>
+          <h3>Work at Height</h3>
+          <p>Fall protection, scaffold checks, and edge-protection audits.</p>
+        </div>
+      </div>
+      <div class="comp reveal reveal-delay-2">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="6"/><line x1="14.5" y1="14.5" x2="20" y2="20"/></svg>
+        <div>
+          <h3>Incident Investigation &amp; Reporting</h3>
+          <p>Root-cause analysis and corrective-action tracking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- CONTACT -->
+<div class="contact" id="contact">
+  <div class="wrap">
+    <section style="padding-top:70px;padding-bottom:70px;">
+      <h2 class="reveal">Open to Gulf-based HSE roles</h2>
+      <p class="reveal">Based in Punjab, Pakistan — open to relocate for a Safety Officer or HSE position with a contractor in Saudi Arabia, the UAE, or Qatar.</p>
+      <div class="actions reveal">
+        <a class="btn primary" href="mailto:princeathar312@gmail.com">princeathar312@gmail.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/muhammad-athar-ba35a1257" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Muhammad Athar — HSE &amp; Safety Officer — Punjab, Pakistan</p>
+  </div>
+</footer>
+
+<script>
+  // Sticky nav
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
+
+  // Mobile menu
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => links.classList.remove('open'));
+  });
+
+  // Number counter animation
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    if (isNaN(target)) return;
+    let current = 0;
+    const duration = 1400;
+    const step = target / (duration / 16);
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= target) {
+        el.textContent = target + (target === 2 ? '+' : '');
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(current) + (target === 2 ? '+' : '');
+      }
+    }, 16);
+  }
+
+  // Scroll reveal + counter trigger
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Trigger counters when stats come into view (or already in hero)
+        if (entry.target.classList.contains('stats') || entry.target.querySelector('[data-count]')) {
+          entry.target.querySelectorAll('[data-count]').forEach(animateCounter);
+        }
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -30px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Also run counters on load for hero stats
+  setTimeout(() => {
+    document.querySelectorAll('.stats [data-count]').forEach(animateCounter);
+  }, 1100);
+
+  // Active nav link
+  const sections = document.querySelectorAll('section[id], #contact');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const top = sec.offsetTop - 90;
+      if (scrollY >= top) current = sec.getAttribute('id') || 'contact';
+    });
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
