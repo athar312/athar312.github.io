@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Muhammad Athar — HSE & Safety Officer with 2+ years of experience across construction, infrastructure and manufacturing. Open to Gulf-based roles.">
+  <meta name="author" content="Muhammad Athar">
+  <meta property="og:title" content="Muhammad Athar — HSE & Safety Officer">
+  <meta property="og:description" content="HSE & Safety Officer focused on practical risk control, site safety and incident prevention.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://athar312.github.io/">
+  <title>Muhammad Athar | HSE & Safety Officer</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='85'>🛡️</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg-2: #0e0e0e;
+      --panel: #131313;
+      --panel-2: #181818;
+      --line: #292929;
+      --line-gold: rgba(218, 165, 32, .42);
+      --text: #f7f4ed;
+      --muted: #a9a39a;
+      --gold: #d9a520;
+      --gold-bright: #f0c34e;
+      --gold-soft: rgba(217, 165, 32, .12);
+      --green: #42d392;
+      --max: 1120px;
+      --nav: 72px;
+      --radius: 18px;
+      --shadow: 0 24px 80px rgba(0, 0, 0, .45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      min-width: 320px;
+      overflow-x: hidden;
+      background:
+        radial-gradient(circle at 80% 8%, rgba(217,165,32,.08), transparent 28rem),
+        radial-gradient(circle at 10% 35%, rgba(217,165,32,.035), transparent 24rem),
+        var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: .24;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 80%);
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { max-width: 100%; display: block; }
+
+    :focus-visible {
+      outline: 2px solid var(--gold-bright);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .gold { color: var(--gold-bright); }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-bright);
+      font-size: .76rem;
+      font-weight: 800;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(66,211,146,.5);
+      animation: pulse 2s infinite;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: "Manrope", sans-serif;
+    }
+
+    h2.section-title {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      line-height: 1.08;
+      letter-spacing: -.045em;
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 30px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      color: var(--muted);
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 1000;
+      height: var(--nav);
+      border-bottom: 1px solid transparent;
+      background: rgba(8,8,8,.62);
+      backdrop-filter: blur(18px);
+      transition: .3s ease;
+    }
+
+    .nav.scrolled {
+      border-bottom-color: var(--line);
+      background: rgba(8,8,8,.93);
+      box-shadow: 0 10px 40px rgba(0,0,0,.3);
+    }
+
+    .nav-inner {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -.04em;
+    }
+
+    .brand span { color: var(--gold-bright); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      padding: 9px 12px;
+      border-radius: 10px;
+      color: var(--muted);
+      font-size: .86rem;
+      font-weight: 600;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: var(--gold-soft);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .lang {
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: #101010;
+      border-radius: 9px;
+      padding: 7px 9px;
+      cursor: pointer;
+      font-size: .74rem;
+      font-weight: 700;
+    }
+
+    .menu {
+      display: none;
+      border: 1px solid var(--line);
+      color: var(--text);
+      background: transparent;
+      border-radius: 10px;
+      padding: 7px 10px;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100svh;
+      padding: calc(var(--nav) + 74px) 0 64px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -220px;
+      top: 18%;
+      border-radius: 50%;
+      border: 1px solid rgba(217,165,32,.09);
+      box-shadow:
+        0 0 0 80px rgba(217,165,32,.018),
+        0 0 0 160px rgba(217,165,32,.012);
+      animation: orbit 12s linear infinite;
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 70px;
+    }
+
+    .hero-copy h1 {
+      margin: 18px 0 12px;
+      max-width: 780px;
+      font-size: clamp(3.2rem, 7.8vw, 6.7rem);
+      line-height: .94;
+      letter-spacing: -.065em;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(240,195,78,.65);
+    }
+
+    .hero-role {
+      color: #d4d0c8;
+      font-size: clamp(1.1rem, 2vw, 1.4rem);
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 22px 0 30px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 11px;
+    }
+
+    .btn {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 12px 18px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #111;
+      color: var(--text);
+      font-weight: 700;
+      font-size: .9rem;
+      transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      border-color: var(--gold);
+      box-shadow: 0 12px 28px rgba(0,0,0,.3);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--gold-bright), var(--gold));
+      border-color: var(--gold-bright);
+      color: #161106;
+      box-shadow: 0 10px 35px rgba(217,165,32,.18);
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 16px 40px rgba(217,165,32,.28);
+    }
+
+    .btn svg { width: 17px; height: 17px; }
+
+    /* Live HSE monitor */
+    .monitor-wrap {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 500px;
+    }
+
+    .monitor {
+      position: relative;
+      width: min(100%, 430px);
+      padding: 25px;
+      border: 1px solid var(--line-gold);
+      border-radius: 26px;
+      background:
+        linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.012)),
+        rgba(14,14,14,.92);
+      box-shadow: var(--shadow), inset 0 1px rgba(255,255,255,.05);
+      overflow: hidden;
+      transform: perspective(1000px) rotateY(-5deg);
+      transition: transform .5s ease;
+    }
+
+    .monitor:hover { transform: perspective(1000px) rotateY(0deg) translateY(-5px); }
+
+    .monitor::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      top: -140px;
+      right: -100px;
+      border-radius: 50%;
+      background: rgba(217,165,32,.1);
+      filter: blur(30px);
+    }
+
+    .monitor-head,
+    .monitor-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .monitor-head {
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .monitor-label {
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--green);
+      font-size: .72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .live i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 1.6s infinite;
+    }
+
+    .shield {
+      width: 150px;
+      height: 170px;
+      margin: 28px auto;
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .shield::before,
+    .shield::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(217,165,32,.28);
+      clip-path: polygon(50% 0, 92% 17%, 86% 70%, 50% 100%, 14% 70%, 8% 17%);
+      animation: scan 3s ease-in-out infinite;
+    }
+
+    .shield::after {
+      inset: 22px;
+      border-color: rgba(240,195,78,.55);
+      animation-delay: -1.5s;
+    }
+
+    .shield svg {
+      width: 88px;
+      height: 98px;
+      color: var(--gold-bright);
+      filter: drop-shadow(0 0 20px rgba(217,165,32,.22));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .monitor-score {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .monitor-score strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+      font-size: 3rem;
+      line-height: 1;
+      color: var(--gold-bright);
+    }
+
+    .monitor-score span {
+      color: var(--muted);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .monitor-row {
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      font-size: .83rem;
+    }
+
+    .status {
+      color: var(--green);
+      font-weight: 800;
+      font-size: .7rem;
+      letter-spacing: .08em;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      margin-top: 48px;
+      max-width: 700px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-stat {
+      padding: 17px 20px 17px 0;
+      border-right: 1px solid var(--line);
+    }
+
+    .hero-stat:not(:first-child) { padding-left: 20px; }
+    .hero-stat:last-child { border-right: 0; }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--gold-bright);
+      font-family: "Manrope", sans-serif;
+      font-size: 1.55rem;
+    }
+
+    .hero-stat span {
+      color: var(--muted);
+      font-size: .76rem;
+    }
+
+    /* General sections */
+    section { padding: 110px 0; }
+
+    .about {
+      border-top: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.015), transparent);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: .7fr 1.3fr;
+      gap: 80px;
+    }
+
+    .about-copy {
+      max-width: 740px;
+      color: #d4d0c8;
+      font-size: 1.08rem;
+    }
+
+    .about-copy p + p { margin-top: 18px; }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 42px;
+    }
+
+    .principle {
+      padding: 22px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      border-radius: 14px;
+    }
+
+    .principle b {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--gold-bright);
+      font-family: "Manrope", sans-serif;
+    }
+
+    .principle span {
+      color: var(--muted);
+      font-size: .83rem;
+    }
+
+    /* Experience */
+    .timeline {
+      position: relative;
+      max-width: 920px;
+      margin-left: auto;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      bottom: 5px;
+      left: 9px;
+      width: 1px;
+      background: linear-gradient(var(--gold), var(--line), transparent);
+    }
+
+    .job {
+      position: relative;
+      padding-left: 48px;
+      padding-bottom: 50px;
+    }
+
+    .job:last-child { padding-bottom: 0; }
+
+    .job::before {
+      content: "";
+      position: absolute;
+      top: 5px;
+      left: 3px;
+      width: 13px;
+      height: 13px;
+      border: 3px solid var(--gold);
+      border-radius: 50%;
+      background: var(--bg);
+      box-shadow: 0 0 0 6px rgba(217,165,32,.07);
+    }
+
+    .job-card {
+      padding: 25px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      transition: .35s ease;
+    }
+
+    .job-card:hover {
+      transform: translateX(6px);
+      border-color: var(--line-gold);
+      box-shadow: 0 18px 50px rgba(0,0,0,.3);
+    }
+
+    .job-date {
+      color: var(--gold-bright);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .job h3 {
+      margin-top: 7px;
+      font-size: 1.2rem;
+    }
+
+    .job-company {
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: .87rem;
+    }
+
+    .job p {
+      margin-top: 13px;
+      color: #c8c3bb;
+      font-size: .93rem;
+    }
+
+    /* Certifications */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .cert {
+      min-height: 210px;
+      position: relative;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(145deg, var(--panel-2), var(--panel));
+      overflow: hidden;
+      transition: .35s ease;
+    }
+
+    .cert::after {
+      content: "01";
+      position: absolute;
+      right: 18px;
+      bottom: -13px;
+      color: rgba(255,255,255,.025);
+      font: 800 5rem/1 "Manrope", sans-serif;
+    }
+
+    .cert:hover {
+      transform: translateY(-7px);
+      border-color: var(--gold);
+      box-shadow: 0 20px 55px rgba(0,0,0,.38);
+    }
+
+    .cert-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line-gold);
+      border-radius: 11px;
+      color: var(--gold-bright);
+      background: var(--gold-soft);
+    }
+
+    .cert h3 {
+      margin-top: 20px;
+      font-size: 1.05rem;
+    }
+
+    .cert p {
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    /* Skills */
+    .skill-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 13px;
+    }
+
+    .skill {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 19px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      transition: .3s ease;
+    }
+
+    .skill:hover {
+      border-color: var(--line-gold);
+      background: var(--panel-2);
+      transform: translateY(-4px);
+    }
+
+    .skill-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      color: var(--gold-bright);
+      background: var(--gold-soft);
+      border: 1px solid var(--line-gold);
+    }
+
+    .skill h3 { font-size: .92rem; }
+    .skill p { margin-top: 2px; color: var(--muted); font-size: .76rem; }
+
+    /* Gallery placeholders */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.35fr .65fr .65fr;
+      grid-auto-rows: 180px;
+      gap: 12px;
+    }
+
+    .gallery-placeholder {
+      position: relative;
+      display: flex;
+      align-items: end;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px dashed #454545;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 70% 30%, rgba(217,165,32,.12), transparent 30%),
+        linear-gradient(135deg, #151515, #0d0d0d);
+    }
+
+    .gallery-placeholder:first-child { grid-row: span 2; }
+
+    .gallery-placeholder::before {
+      content: "PHOTO";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: rgba(255,255,255,.06);
+      font: 800 3.3rem/1 "Manrope", sans-serif;
+      letter-spacing: .1em;
+    }
+
+    .gallery-placeholder strong,
+    .gallery-placeholder span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .gallery-placeholder strong {
+      display: block;
+      font-family: "Manrope", sans-serif;
+    }
+
+    .gallery-placeholder span {
+      display: block;
+      color: var(--muted);
+      font-size: .74rem;
+    }
+
+    /* GCC */
+    .gcc {
+      position: relative;
+      overflow: hidden;
+      border-block: 1px solid var(--line);
+      background:
+        radial-gradient(circle at 50% 0, rgba(217,165,32,.12), transparent 42%),
+        #0b0b0b;
+    }
+
+    .gcc-inner { text-align: center; }
+
+    .gcc h2 {
+      margin: 15px auto;
+      max-width: 780px;
+      font-size: clamp(2.2rem, 5vw, 4.2rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .gcc p {
+      max-width: 650px;
+      margin: 0 auto 28px;
+      color: var(--muted);
+    }
+
+    .countries {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .country {
+      padding: 9px 15px;
+      border: 1px solid var(--line-gold);
+      border-radius: 999px;
+      color: #e4dfd5;
+      background: rgba(217,165,32,.06);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    /* Contact */
+    .contact-card {
+      position: relative;
+      padding: 48px;
+      border: 1px solid var(--line-gold);
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(217,165,32,.1), transparent 45%),
+        var(--panel);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-card::after {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
+      right: -110px;
+      top: -130px;
+      border: 1px solid rgba(217,165,32,.15);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(217,165,32,.025), 0 0 0 90px rgba(217,165,32,.018);
+    }
+
+    .contact-card h2 {
+      max-width: 760px;
+      margin: 13px 0;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+
+    .contact-card p {
+      max-width: 650px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    footer {
+      padding: 35px 0 55px;
+      color: var(--muted);
+      font-size: .76rem;
+      text-align: center;
+    }
+
+    /* Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity .75s cubic-bezier(.16,1,.3,1), transform .75s cubic-bezier(.16,1,.3,1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-1 { transition-delay: .1s; }
+    .delay-2 { transition-delay: .2s; }
+
+    /* Floating WhatsApp */
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 900;
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(66,211,146,.55);
+      border-radius: 50%;
+      background: #101713;
+      color: var(--green);
+      box-shadow: 0 12px 35px rgba(0,0,0,.4);
+      transition: .25s ease;
+    }
+
+    .whatsapp:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 15px 40px rgba(66,211,146,.16);
+    }
+
+    .whatsapp svg { width: 24px; height: 24px; }
+
+    /* Animations */
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(66,211,146,.42); }
+      55% { box-shadow: 0 0 0 9px rgba(66,211,146,0); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-9px); }
+    }
+
+    @keyframes scan {
+      0%, 100% { transform: scale(.96); opacity: .4; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(12px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(12px) rotate(-360deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: .001ms !important;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid { grid-template-columns: 1fr; gap: 45px; }
+
+      .monitor-wrap { min-height: auto; }
+
+      .hero-copy { text-align: center; }
+      .hero-description { margin-inline: auto; }
+      .hero-buttons, .hero-stats { margin-inline: auto; justify-content: center; }
+
+      .cert-grid, .skill-grid { grid-template-columns: repeat(2, 1fr); }
+      .section-heading { align-items: start; flex-direction: column; }
+    }
+
+    @media (max-width: 720px) {
+      :root { --nav: 64px; }
+
+      .container { width: min(var(--max), calc(100% - 28px)); }
+
+      .nav-links {
+        position: absolute;
+        top: var(--nav);
+        left: 14px;
+        right: 14px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px;
+        border: 1px solid var(--line);
+        border-radius: 14px;
+        background: rgba(15,15,15,.98);
+        box-shadow: var(--shadow);
+      }
+
+      .nav-links.open { display: flex; }
+      .nav-links a { display: block; padding: 12px; }
+
+      .menu { display: block; }
+      .nav-actions .lang { display: none; }
+
+      .hero { padding-top: calc(var(--nav) + 42px); }
+      .hero-copy h1 { font-size: clamp(3rem, 15vw, 5rem); }
+      .hero-stats { grid-template-columns: 1fr; width: 100%; }
+      .hero-stat, .hero-stat:not(:first-child) {
+        padding: 13px 0;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero-stat:last-child { border-bottom: 0; }
+
+      section { padding: 78px 0; }
+
+      .principles,
+      .cert-grid,
+      .skill-grid { grid-template-columns: 1fr; }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 150px;
+      }
+
+      .gallery-placeholder:first-child {
+        grid-column: 1 / -1;
+        grid-row: span 1;
+      }
+
+      .contact-card { padding: 30px 22px; }
+
+      .monitor { transform: none; }
+      .whatsapp { right: 15px; bottom: 15px; }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav" id="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#home" aria-label="Athar home">Athar<span>.</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#certifications" data-i18n="nav.certifications">Certifications</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+        <li><a href="#gallery" data-i18n="nav.work">Work</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="lang" id="langButton" type="button" aria-label="Change language">اردو</button>
+        <button class="menu" id="menuButton" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="eyebrow" data-i18n="hero.available">Available for Gulf-based roles</div>
+          <h1>Muhammad <span>Athar.</span></h1>
+          <div class="hero-role" data-i18n="hero.role">HSE & Safety Officer</div>
+
+          <p class="hero-description" data-i18n="hero.description">
+            Practical site safety professional focused on risk assessment, permit-to-work systems,
+            job safety analysis and safer construction environments.
+          </p>
+
+          <div class="hero-buttons">
+            <a class="btn primary" href="cv.pdf" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/>
+              </svg>
+              <span data-i18n="hero.cv">Download CV</span>
+            </a>
+            <a class="btn" href="mailto:princeathar312@gmail.com">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                <path d="m3 7 9 6 9-6"/>
+              </svg>
+              <span data-i18n="hero.email">Email Me</span>
+            </a>
+            <a class="btn" href="https://www.linkedin.com/in/muhammad-athar-ba35a1257" target="_blank" rel="noopener">
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong><span class="counter" data-target="2">0</span>+</strong>
+              <span data-i18n="stats.experience">Years HSE experience</span>
+            </div>
+            <div class="hero-stat">
+              <strong><span class="counter" data-target="6">0</span></strong>
+              <span data-i18n="stats.certifications">Certifications & training</span>
+            </div>
+            <div class="hero-stat">
+              <strong>GCC</strong>
+              <span data-i18n="stats.relocation">Open to relocation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-wrap reveal delay-1" aria-label="Decorative live HSE monitor">
+          <div class="monitor">
+            <div class="monitor-head">
+              <div>
+                <div class="monitor-label">HSE / SAFETY MONITOR</div>
+                <strong>Site Readiness</strong>
+              </div>
+              <div class="live"><i></i> Live</div>
+            </div>
+
+            <div class="shield" aria-hidden="true">
+              <svg viewBox="0 0 100 115" fill="none">
+                <path d="M50 5 88 19v31c0 27-15 47-38 58C27 97 12 77 12 50V19L50 5Z"
+                      stroke="currentColor" stroke-width="3"/>
+                <path d="m31 55 13 13 26-29" stroke="currentColor" stroke-width="5"
+                      stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+
+            <div class="monitor-score">
+              <strong>SAFE</strong>
+              <span>Prevention mindset</span>
+            </div>
+
+            <div class="monitor-row">
+              <span>Risk identification</span>
+              <span class="status">ACTIVE</span>
+            </div>
+            <div class="monitor-row">
+              <span>Permit-to-work</span>
+              <span class="status">CONTROLLED</span>
+            </div>
+            <div class="monitor-row">
+              <span>PPE awareness</span>
+              <span class="status">READY</span>
+            </div>
+            <div class="monitor-row">
+              <span>Incident prevention</span>
+              <span class="status">PRIORITY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="reveal">
+            <div class="eyebrow">Professional Profile</div>
+            <h2 class="section-title" style="margin-top:15px;">
+              Safety is not paperwork.<br><span class="gold">It's prevention.</span>
+            </h2>
+          </div>
+
+          <div class="about-copy reveal delay-1">
+            <p>
+              I'm a Safety Officer based in Punjab, Pakistan, with two years across construction,
+              infrastructure, and manufacturing sites — at NESPAK, TMT, and M. Saddique Ch & Co.
+            </p>
+            <p>
+              My day-to-day centres on permit-to-work systems, job safety analysis, site-level
+              risk assessment, worker inductions and practical HSE monitoring.
+            </p>
+            <p>
+              I'm currently working through a BS degree alongside my HSE certifications and am
+              actively looking for Safety Officer or HSE opportunities in Saudi Arabia, the UAE,
+              Qatar and other Gulf markets.
+            </p>
+
+            <div class="principles">
+              <div class="principle">
+                <b>01 — Identify</b>
+                <span>Recognise hazards before work starts.</span>
+              </div>
+              <div class="principle">
+                <b>02 — Control</b>
+                <span>Apply practical controls at site level.</span>
+              </div>
+              <div class="principle">
+                <b>03 — Prevent</b>
+                <span>Build safer habits and working conditions.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Career Path</div>
+            <h2 class="section-title" style="margin-top:14px;">Experience</h2>
+          </div>
+          <p>Site-focused HSE experience across infrastructure, construction and active project environments.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="job reveal">
+            <div class="job-card">
+              <div class="job-date">DEC 2025 — PRESENT</div>
+              <h3>Safety Officer — M. Saddique Ch & Co (MSC)</h3>
+              <div class="job-company">Sargodha, Pakistan</div>
+              <p>Site-level HSE monitoring, worker inductions, inspection records and practical safety controls for an active project.</p>
+            </div>
+          </article>
+
+          <article class="job reveal delay-1">
+            <div class="job-card">
+              <div class="job-date">MAR 2025 — OCT 2025</div>
+              <h3>Safety Assistant — Tayyab Manzoor Tarar (TMT)</h3>
+              <div class="job-company">Lahore, Pakistan</div>
+              <p>Supported permit-to-work issuance, daily site safety walks and routine HSE activities.</p>
+            </div>
+          </article>
+
+          <article class="job reveal delay-2">
+            <div class="job-card">
+              <div class="job-date">JAN 2024 — FEB 2025</div>
+              <h3>Safety Officer — NESPAK</h3>
+              <div class="job-company">Karachi, Pakistan</div>
+              <p>Started HSE career on infrastructure design-and-supervision projects with a focus on practical site safety.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Qualifications</div>
+            <h2 class="section-title" style="margin-top:14px;">Certifications</h2>
+          </div>
+          <p>Formal qualifications supporting day-to-day occupational health and safety work.</p>
+        </div>
+
+        <div class="cert-grid">
+          <article class="cert reveal">
+            <div class="cert-icon">01</div>
+            <h3>NEBOSH IGC</h3>
+            <p>NEBOSH (UK) — International General Certificate in Occupational Health & Safety.</p>
+          </article>
+          <article class="cert reveal delay-1">
+            <div class="cert-icon">02</div>
+            <h3>OSHA 30-Hour</h3>
+            <p>OSHA (US) — Construction Safety & Health.</p>
+          </article>
+          <article class="cert reveal delay-2">
+            <div class="cert-icon">03</div>
+            <h3>IOSH Managing Safely</h3>
+            <p>IOSH (UK) — Safety leadership for supervisors and managers.</p>
+          </article>
+          <article class="cert reveal">
+            <div class="cert-icon">04</div>
+            <h3>Risk Assessment</h3>
+            <p>Highfield — Practical hazard and risk evaluation.</p>
+          </article>
+          <article class="cert reveal delay-1">
+            <div class="cert-icon">05</div>
+            <h3>Emergency First Aid at Work</h3>
+            <p>Highfield — Workplace first response.</p>
+          </article>
+          <article class="cert reveal delay-2">
+            <div class="cert-icon">06</div>
+            <h3>Fire Safety</h3>
+            <p>Highfield — Fire prevention and response.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">HSE Toolbox</div>
+            <h2 class="section-title" style="margin-top:14px;">Core Competencies</h2>
+          </div>
+          <p>Practical safety functions built around hazard identification, controls, compliance and prevention.</p>
+        </div>
+
+        <div class="skill-grid">
+          <article class="skill reveal">
+            <div class="skill-icon">JSA</div>
+            <div><h3>Job Safety Analysis</h3><p>Task steps and controls.</p></div>
+          </article>
+          <article class="skill reveal delay-1">
+            <div class="skill-icon">PTW</div>
+            <div><h3>Permit-to-Work</h3><p>Hazardous work permits.</p></div>
+          </article>
+          <article class="skill reveal delay-2">
+            <div class="skill-icon">RA</div>
+            <div><h3>Risk Assessment</h3><p>Hazard rating and controls.</p></div>
+          </article>
+          <article class="skill reveal">
+            <div class="skill-icon">CS</div>
+            <div><h3>Confined Space</h3><p>Entry, testing and rescue planning.</p></div>
+          </article>
+          <article class="skill reveal delay-1">
+            <div class="skill-icon">WAH</div>
+            <div><h3>Work at Height</h3><p>Fall protection and checks.</p></div>
+          </article>
+          <article class="skill reveal delay-2">
+            <div class="skill-icon">INC</div>
+            <div><h3>Incident Investigation</h3><p>Root cause and corrective action.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">Field Work</div>
+            <h2 class="section-title" style="margin-top:14px;">HSE in Action</h2>
+          </div>
+          <p>Photo slots are intentionally prepared for your real site, PPE, inspection and project photographs.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-placeholder reveal">
+            <div><strong>Primary Site Photo</strong><span>Replace with your strongest HSE/project image</span></div>
+          </div>
+          <div class="gallery-placeholder reveal delay-1">
+            <div><strong>PPE / Safety</strong><span>Your professional PPE photo</span></div>
+          </div>
+          <div class="gallery-placeholder reveal delay-2">
+            <div><strong>Inspection</strong><span>Site inspection / monitoring</span></div>
+          </div>
+          <div class="gallery-placeholder reveal">
+            <div><strong>Project</strong><span>Construction or infrastructure work</span></div>
+          </div>
+          <div class="gallery-placeholder reveal delay-1">
+            <div><strong>Team</strong><span>Safety meeting / toolbox talk</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="gcc" id="gcc">
+      <div class="container gcc-inner reveal">
+        <div class="eyebrow">Gulf Opportunity</div>
+        <h2>Ready for the next <span class="gold">safe step.</span></h2>
+        <p>
+          Based in Punjab, Pakistan and open to relocation for Safety Officer, HSE Officer
+          and related site-safety roles across the Gulf.
+        </p>
+        <div class="countries">
+          <span class="country">🇸🇦 Saudi Arabia</span>
+          <span class="country">🇦🇪 United Arab Emirates</span>
+          <span class="country">🇶🇦 Qatar</span>
+        </div>
+        <a class="btn primary" href="mailto:princeathar312@gmail.com">Start a Conversation →</a>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-card reveal">
+          <div class="eyebrow">Let's Connect</div>
+          <h2>Looking for a <span class="gold">Safety Officer?</span></h2>
+          <p>
+            For recruitment opportunities, HSE roles, project discussions or professional enquiries,
+            contact me directly.
+          </p>
+
+          <div class="contact-actions">
+            <a class="btn primary" href="mailto:princeathar312@gmail.com">princeathar312@gmail.com</a>
+            <a class="btn" href="https://wa.me/923414826804" target="_blank" rel="noopener">WhatsApp</a>
+            <a class="btn" href="https://www.linkedin.com/in/muhammad-athar-ba35a1257" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="whatsapp" href="https://wa.me/923414826804" target="_blank" rel="noopener" aria-label="Contact Muhammad Athar on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M20 11.5a8.3 8.3 0 0 1-12.7 7.1L4 20l1.5-3.1A8.3 8.3 0 1 1 20 11.5Z"/>
+      <path d="M8.5 9.2c.3 1.8 2.3 3.7 4 4.2.7.2 1.2-.2 1.5-.7l.4-.7-1.6-.9-.5.6c-.8-.3-1.5-.9-1.9-1.6l.5-.6-.8-1.6-.7.3c-.6.2-1 .6-.9 1Z"/>
+    </svg>
+  </a>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Muhammad Athar — HSE & Safety Officer. Built for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    const nav = document.getElementById("nav");
+    const navLinks = document.getElementById("navLinks");
+    const menuButton = document.getElementById("menuButton");
+    const langButton = document.getElementById("langButton");
+
+    const translations = {
+      en: {
+        "nav.about": "About",
+        "nav.experience": "Experience",
+        "nav.certifications": "Certifications",
+        "nav.skills": "Skills",
+        "nav.work": "Work",
+        "nav.contact": "Contact",
+        "hero.available": "Available for Gulf-based roles",
+        "hero.role": "HSE & Safety Officer",
+        "hero.description": "Practical site safety professional focused on risk assessment, permit-to-work systems, job safety analysis and safer construction environments.",
+        "hero.cv": "Download CV",
+        "hero.email": "Email Me",
+        "stats.experience": "Years HSE experience",
+        "stats.certifications": "Certifications & training",
+        "stats.relocation": "Open to relocation"
+      },
+      ur: {
+        "nav.about": "تعارف",
+        "nav.experience": "تجربہ",
+        "nav.certifications": "سرٹیفیکیشنز",
+        "nav.skills": "مہارتیں",
+        "nav.work": "فیلڈ ورک",
+        "nav.contact": "رابطہ",
+        "hero.available": "خلیجی ملازمتوں کے لیے دستیاب",
+        "hero.role": "HSE اور سیفٹی آفیسر",
+        "hero.description": "عملی سائٹ سیفٹی پروفیشنل، جو رسک اسیسمنٹ، پرمٹ ٹو ورک، جاب سیفٹی اینالیسس اور محفوظ تعمیراتی ماحول پر توجہ دیتا ہے۔",
+        "hero.cv": "CV ڈاؤن لوڈ کریں",
+        "hero.email": "ای میل کریں",
+        "stats.experience": "سالہ HSE تجربہ",
+        "stats.certifications": "سرٹیفیکیشنز اور تربیت",
+        "stats.relocation": "منتقلی کے لیے دستیاب"
+      },
+      ar: {
+        "nav.about": "نبذة",
+        "nav.experience": "الخبرة",
+        "nav.certifications": "الشهادات",
+        "nav.skills": "المهارات",
+        "nav.work": "العمل الميداني",
+        "nav.contact": "تواصل",
+        "hero.available": "متاح لفرص العمل في الخليج",
+        "hero.role": "مسؤول HSE وسلامة",
+        "hero.description": "متخصص في سلامة المواقع مع تركيز على تقييم المخاطر وتصاريح العمل وتحليل سلامة المهام وبيئات الإنشاء الآمنة.",
+        "hero.cv": "تحميل السيرة الذاتية",
+        "hero.email": "راسلني",
+        "stats.experience": "سنوات خبرة HSE",
+        "stats.certifications": "الشهادات والتدريب",
+        "stats.relocation": "متاح للانتقال"
+      }
+    };
+
+    const languageOrder = ["en", "ur", "ar"];
+    let currentLanguage = "en";
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      const dictionary = translations[language];
+
+      document.documentElement.lang = language === "ur" ? "ur" : language;
+      document.documentElement.dir = language === "ar" || language === "ur" ? "rtl" : "ltr";
+      langButton.textContent = language === "en" ? "اردو" : language === "ur" ? "العربية" : "EN";
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) element.textContent = dictionary[key];
+      });
+    }
+
+    langButton.addEventListener("click", () => {
+      const index = languageOrder.indexOf(currentLanguage);
+      setLanguage(languageOrder[(index + 1) % languageOrder.length]);
+    });
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    window.addEventListener("scroll", () => {
+      nav.classList.toggle("scrolled", window.scrollY > 20);
+    }, { passive: true });
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .12 });
+
+    document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        const element = entry.target;
+        const target = Number(element.dataset.target);
+        const duration = 1000;
+        const start = performance.now();
+
+        function tick(now) {
+          const progress = Math.min((now - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          element.textContent = Math.round(target * eased);
+
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          }
+        }
+
+        requestAnimationFrame(tick);
+        observer.unobserve(element);
+      });
+    }, { threshold: .8 });
+
+    document.querySelectorAll(".counter").forEach((element) => counterObserver.observe(element));
+
+    const sections = [...document.querySelectorAll("main section[id]"), document.getElementById("home")];
+
+    const activeObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${entry.target.id}`
+          );
+        });
+      });
+    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+
+    sections.forEach((section) => activeObserver.observe(section));
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
