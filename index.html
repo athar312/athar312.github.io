@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muhammad Athar — HSE &amp; Safety Officer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b1220;
+    --bg-alt:#111a2b;
+    --bg-card:#152036;
+    --line:#243350;
+    --text:#eef2f7;
+    --muted:#93a3ba;
+    --steel:#5b8aa0;
+    --accent:#3b9dff;
+    --accent-soft:rgba(59,157,255,.16);
+    --accent-ink:#ffffff;
+    --stripe-dark:#0a1220;
+    --maxw:1080px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3{
+    font-family:'Space Grotesk', sans-serif;
+    font-weight:700;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  a{color:var(--accent); text-decoration:none;}
+  a:hover, a:focus{text-decoration:underline;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 24px;}
+  section{padding:72px 0;}
+  .stripe{height:6px; background:repeating-linear-gradient(45deg, var(--accent) 0 10px, var(--stripe-dark) 10px 20px); background-size:200% 100%;}
+  @media (prefers-reduced-motion:no-preference){
+    .stripe{animation:stripeMove 2.6s linear infinite;}
+  }
+  @keyframes stripeMove{ to{ background-position:40px 0; } }
+
+  .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+  @media (prefers-reduced-motion:reduce){ .reveal{opacity:1; transform:none; transition:none;} }
+
+  .hc{opacity:1;}
+  @media (prefers-reduced-motion:no-preference){
+    .hc{opacity:0; animation:heroCascade .8s cubic-bezier(.16,.8,.24,1) forwards;}
+  }
+  @keyframes heroCascade{ from{opacity:0; transform:translateY(16px);} to{opacity:1; transform:translateY(0);} }
+
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(11,18,32,.85);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:14px; padding-bottom:14px;}
+  .logo{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.15rem;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:none; gap:26px; font-size:0.92rem; color:var(--muted);}
+  .nav-links a{color:var(--muted);}
+  .nav-links a:hover{color:var(--text); text-decoration:none;}
+  @media (min-width:760px){ .nav-links{display:flex;} }
+  .nav-cta{
+    border:1px solid var(--accent);
+    color:var(--accent-ink);
+    background:var(--accent);
+    padding:8px 16px;
+    font-size:0.88rem;
+    font-weight:600;
+  }
+  .nav-cta:hover{opacity:.9; text-decoration:none;}
+
+  .hero{position:relative; background:var(--bg-alt); border-bottom:1px solid var(--line); overflow:hidden;}
+  .hero-grid{
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(var(--line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--line) 1px, transparent 1px);
+    background-size:42px 42px;
+    opacity:.12;
+  }
+  @media (prefers-reduced-motion:no-preference){
+    .hero-grid{animation:driftGrid 26s linear infinite;}
+  }
+  @keyframes driftGrid{ from{background-position:0 0;} to{background-position:420px 420px;} }
+  .hero-canvas{position:absolute; inset:0; width:100%; height:100%; opacity:.55;}
+  .hero .wrap{position:relative; padding-top:52px; padding-bottom:56px; display:grid; gap:40px; grid-template-columns:1fr;}
+  @media (min-width:840px){ .hero .wrap{grid-template-columns:1.15fr 0.85fr; align-items:center;} }
+
+  .badge{
+    display:inline-flex; align-items:center; gap:8px;
+    border:1px solid var(--accent); color:var(--accent);
+    padding:6px 12px; font-size:0.82rem; font-weight:500;
+    margin-bottom:18px;
+  }
+  .badge .dot{width:7px; height:7px; background:var(--accent); border-radius:50%;}
+  @media (prefers-reduced-motion:no-preference){
+    .badge .dot{animation:pulseDot 1.6s ease-in-out infinite;}
+  }
+  @keyframes pulseDot{ 0%,100%{opacity:1;} 50%{opacity:.3;} }
+
+  .hero h1{font-size:clamp(2.1rem, 6vw, 3.1rem);}
+  .hero .role{font-size:1.15rem; color:var(--muted); margin-top:6px;}
+  .hero .rule{width:64px; margin:20px 0;}
+  .hero p.tagline{max-width:52ch; font-size:1.05rem;}
+  .stats{display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:34px; max-width:440px;}
+  .stat b{font-family:'Space Grotesk',sans-serif; font-size:1.7rem; display:block; color:var(--accent);}
+  .stat span{color:var(--muted); font-size:0.8rem;}
+  .actions{display:flex; flex-wrap:wrap; gap:12px; margin-top:32px;}
+  .btn{
+    border:1px solid var(--line);
+    padding:11px 20px;
+    font-size:0.95rem;
+    color:var(--text);
+    display:inline-block;
+    transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  }
+  .btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:600;}
+  .btn:hover{border-color:var(--accent); transform:translateY(-2px);}
+  .btn.primary:hover{box-shadow:0 8px 24px -8px var(--accent-soft);}
+
+  .hero-visual{position:relative; display:flex; justify-content:center; align-items:center; min-height:280px;}
+  .id-card{
+    position:relative;
+    width:230px; background:var(--bg-card); border:1px solid var(--line);
+    padding:26px 20px 22px; text-align:center; z-index:2;
+  }
+  .avatar-ring{
+    width:92px; height:92px; margin:0 auto 14px; border-radius:50%;
+    border:2px solid var(--accent);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Space Grotesk',sans-serif; font-size:1.7rem; font-weight:700; color:var(--accent);
+    background:var(--accent-soft);
+    object-fit:cover;
+  }
+  .id-card .name{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:1.05rem;}
+  .id-card .tag{color:var(--muted); font-size:0.82rem; margin-top:4px;}
+  .id-card .verified{
+    position:absolute; top:-10px; right:-10px;
+    width:30px; height:30px; background:var(--accent); color:var(--accent-ink);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .id-card .verified svg{width:16px; height:16px;}
+  .float-icon{position:absolute; color:var(--steel); opacity:.55; z-index:1;}
+  .float-icon svg{width:26px; height:26px;}
+  @media (prefers-reduced-motion:no-preference){
+    .float-icon{animation:floaty 3.4s ease-in-out infinite;}
+  }
+  @keyframes floaty{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} }
+  .fi-1{top:6%; left:4%; animation-delay:.2s;}
+  .fi-2{bottom:10%; left:0%; animation-delay:1s;}
+  .fi-3{top:2%; right:2%; animation-delay:.6s;}
+  @media (max-width:839px){ .float-icon{display:none;} }
+
+  h2.section-title{font-size:1.55rem; margin-bottom:8px;}
+  .section-sub{color:var(--muted); margin-bottom:34px; max-width:58ch; font-size:0.95rem;}
+
+  .philosophy{background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
+  .philosophy h2{font-size:clamp(1.5rem,4vw,2.1rem); max-width:20ch;}
+  .steps{display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:22px; margin-top:40px; position:relative;}
+  .step{border-left:2px solid var(--accent); padding-left:16px;}
+  .step .num{font-family:'Space Grotesk',sans-serif; color:var(--accent); font-size:0.85rem;}
+  .step h3{font-size:1.1rem; margin-top:6px;}
+  .step p{color:var(--muted); font-size:0.9rem; margin-top:6px;}
+
+  #about p{max-width:64ch; font-size:1.02rem;}
+  #about p + p{margin-top:14px;}
+
+  /* GALLERY (certifications + site work share this) */
+  .gallery-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:18px;}
+  .gallery-item{border:1px solid var(--line); background:var(--bg-card); overflow:hidden; transition:border-color .2s ease, transform .2s ease;}
+  .gallery-item:hover{border-color:var(--accent); transform:translateY(-3px);}
+  .gallery-item .thumb{width:100%; aspect-ratio:4/3; overflow:hidden; background:#0a1120;}
+  .gallery-item .thumb.wide{aspect-ratio:16/9;}
+  .gallery-item .thumb img{width:100%; height:100%; object-fit:cover; display:block; cursor:zoom-in;}
+  .gallery-item .meta{padding:14px 16px;}
+  .gallery-item .meta h3{font-size:0.98rem;}
+  .gallery-item .meta .issuer{color:var(--muted); font-size:0.84rem; margin-top:4px;}
+  .gallery-item.pending .thumb{display:flex; align-items:center; justify-content:center; color:var(--muted); border:1px dashed var(--line); flex-direction:column; gap:8px; font-size:0.78rem; text-align:center; padding:12px;}
+  .gallery-item.pending .thumb svg{width:30px; height:30px;}
+
+  /* LIGHTBOX */
+  .lightbox{position:fixed; inset:0; background:rgba(4,7,13,.94); display:none; align-items:center; justify-content:center; z-index:100; padding:26px;}
+  .lightbox.open{display:flex;}
+  .lightbox img{max-width:100%; max-height:88vh; box-shadow:0 20px 60px rgba(0,0,0,.6);}
+  .lightbox-close{position:absolute; top:16px; right:18px; background:none; border:1px solid var(--line); color:var(--text); font-size:1.4rem; width:40px; height:40px; cursor:pointer; line-height:1;}
+  .lightbox-close:hover{border-color:var(--accent); color:var(--accent);}
+
+  .timeline{position:relative; padding-left:28px; border-left:2px solid var(--line);}
+  .tl-item{position:relative; padding-bottom:34px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:'';
+    position:absolute;
+    left:-33px; top:5px;
+    width:11px; height:11px;
+    background:var(--accent);
+    border-radius:50%;
+  }
+  .tl-item.current::before{ animation:pulseRing 2s infinite; }
+  @keyframes pulseRing{
+    0%{box-shadow:0 0 0 0 rgba(59,157,255,.55);}
+    70%{box-shadow:0 0 0 12px rgba(59,157,255,0);}
+    100%{box-shadow:0 0 0 0 rgba(59,157,255,0);}
+  }
+  .tl-item .when{font-size:0.82rem; color:var(--steel);}
+  .tl-item h3{font-size:1.05rem; margin-top:4px;}
+  .tl-item .where{color:var(--muted); font-size:0.92rem; margin-top:2px;}
+  .tl-item p{margin-top:8px; font-size:0.96rem;}
+
+  .comp-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:18px;}
+  .comp{
+    display:flex; gap:14px; align-items:flex-start;
+    border:1px solid var(--line); background:var(--bg-card);
+    padding:18px; transition:border-color .2s ease, box-shadow .2s ease;
+  }
+  .comp:hover{border-color:var(--accent); box-shadow:0 14px 30px -20px var(--accent-soft);}
+  .comp svg{flex:none; width:26px; height:26px; color:var(--accent); margin-top:2px;}
+  .comp h3{font-size:0.98rem;}
+  .comp p{color:var(--muted); font-size:0.88rem; margin-top:4px;}
+
+  .relocate{background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); text-align:center;}
+  .relocate h2{font-size:1.5rem;}
+  .relocate .section-sub{margin-left:auto; margin-right:auto;}
+  .countries{display:flex; flex-wrap:wrap; justify-content:center; gap:16px; margin-top:34px;}
+  .country{
+    border:1px solid var(--line); background:var(--bg-card);
+    padding:18px 26px; min-width:150px;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .country:hover{border-color:var(--accent); transform:translateY(-3px);}
+  .country .flag{font-size:1.7rem;}
+  .country .name{font-family:'Space Grotesk',sans-serif; font-weight:600; margin-top:8px; font-size:0.98rem;}
+
+  .contact{background:var(--bg-alt); text-align:left;}
+  .contact h2{font-size:1.8rem; max-width:16ch;}
+  .contact p{color:var(--muted); max-width:52ch; margin-top:10px;}
+  .contact .actions{margin-top:28px;}
+
+  footer{padding:26px 0;}
+  footer p{color:var(--muted); font-size:0.85rem; margin:0;}
+
+  .float-contact{
+    position:fixed; right:18px; bottom:18px; z-index:60;
+    background:var(--accent); color:var(--accent-ink); font-weight:600;
+    padding:12px 18px; font-size:0.9rem; display:flex; align-items:center; gap:8px;
+    box-shadow:0 10px 24px -8px rgba(0,0,0,.5);
+    opacity:0; transform:translateY(12px) scale(.96); pointer-events:none;
+    transition:opacity .25s ease, transform .25s ease;
+  }
+  .float-contact.show{opacity:1; transform:translateY(0) scale(1); pointer-events:auto;}
+  .float-contact svg{width:18px; height:18px;}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="logo">Athar<span>.</span></div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#toolbox">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="nav-cta" href="cv.pdf" download>Download CV</a>
+  </div>
+</nav>
+
+<div class="hero" id="hero">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <div>
+      <div class="badge hc" style="animation-delay:.05s"><span class="dot"></span> Available for GCC roles</div>
+      <h1 class="hc" style="animation-delay:.15s">Muhammad Athar</h1>
+      <div class="role hc" style="animation-delay:.22s">HSE &amp; Safety Officer</div>
+      <div class="rule stripe hc" style="animation-delay:.3s"></div>
+      <p class="tagline hc" style="animation-delay:.38s">Building safer construction and infrastructure sites through practical HSE management — now looking to bring that discipline to a site in the Gulf.</p>
+
+      <div class="stats hc" style="animation-delay:.48s">
+        <div class="stat"><b class="counter" data-target="2" data-suffix="+">0</b><span>Years experience</span></div>
+        <div class="stat"><b class="counter" data-target="7" data-suffix="">0</b><span>Certifications</span></div>
+        <div class="stat"><b class="counter" data-target="3" data-suffix="">0</b><span>GCC countries targeted</span></div>
+      </div>
+
+      <div class="actions hc" style="animation-delay:.58s">
+        <a class="btn primary" href="cv.pdf" download>Download CV</a>
+        <a class="btn" href="#contact">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-visual hc" style="animation-delay:.32s">
+      <div class="id-card">
+        <div class="verified" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        </div>
+        <img src="photo.jpg" alt="Muhammad Athar" class="avatar-ring">
+        <div class="name">Muhammad Athar</div>
+        <div class="tag">HSE &amp; Safety Officer</div>
+      </div>
+      <div class="float-icon fi-1" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 15a8 8 0 0 1 16 0"/><rect x="3" y="15" width="18" height="2.4" rx="1"/></svg>
+      </div>
+      <div class="float-icon fi-2" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/></svg>
+      </div>
+      <div class="float-icon fi-3" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4 2 20h20L12 4z"/><line x1="12" y1="10" x2="12" y2="15"/></svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="philosophy">
+  <div class="wrap">
+    <h2 class="reveal">Safety isn't paperwork. It's prevention.</h2>
+    <div class="steps">
+      <div class="step reveal"><div class="num">01</div><h3>Identify</h3><p>Spot the hazard before it becomes an incident.</p></div>
+      <div class="step reveal"><div class="num">02</div><h3>Control</h3><p>Put the right barrier, permit, or procedure in place.</p></div>
+      <div class="step reveal"><div class="num">03</div><h3>Prevent</h3><p>Build habits that hold up when no one's watching.</p></div>
+    </div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <h2 class="section-title reveal">About</h2>
+    <p class="reveal">I'm a Safety Officer based in Punjab, Pakistan, with two years across construction, infrastructure, and manufacturing sites — at NESPAK, TMT, and M. Saddique Ch &amp; Co. My day-to-day centres on permit-to-work systems, job safety analysis, and site-level risk assessment: the groundwork that keeps a project moving without an incident report.</p>
+    <p class="reveal">I'm currently working through a BS degree alongside my HSE certifications, and actively looking for a Safety Officer or HSE role with a contractor in Saudi Arabia, the UAE, or Qatar.</p>
+  </div>
+</section>
+
+<section id="certifications">
+  <div class="wrap">
+    <h2 class="section-title reveal">Certifications &amp; Training</h2>
+    <p class="section-sub reveal">Click any certificate to view it full-size.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-nebosh.jpg" alt="NEBOSH IGC certificate"></div>
+        <div class="meta"><h3>NEBOSH IGC</h3><div class="issuer">NEBOSH (UK) — awarded with credit, Aug 2025</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-osha.jpg" alt="OSHA 30-Hour certificate"></div>
+        <div class="meta"><h3>OSHA 30-Hour Construction</h3><div class="issuer">IASP — Sept 2024</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-iosh.jpg" alt="IOSH Managing Safely certificate"></div>
+        <div class="meta"><h3>IOSH Managing Safely</h3><div class="issuer">IOSH (UK) — Nov 2024</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-riskassessment.jpg" alt="Highfield Risk Assessment certificate"></div>
+        <div class="meta"><h3>Risk Assessment (Level 2)</h3><div class="issuer">Highfield — Dec 2024</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-firstaid.jpg" alt="Highfield Emergency First Aid at Work certificate"></div>
+        <div class="meta"><h3>Emergency First Aid at Work</h3><div class="issuer">Highfield — Nov 2024</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb"><img src="cert-coshh.jpg" alt="COSHH Risk Assessor certificate"></div>
+        <div class="meta"><h3>COSHH Risk Assessor</h3><div class="issuer">The Knights of Safety — Aug 2026</div></div>
+      </div>
+      <!-- Send a photo of this certificate and I'll drop it in as cert-firesafety.jpg -->
+      <div class="gallery-item pending reveal">
+        <div class="thumb">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c1 3-3 4-3 8a3 3 0 0 0 6 0c0-1-.5-2-1-2.5.7 2 .3 4-2 4-2.5 0-4-2-4-4.5C8 4 10 2 12 2z"/></svg>
+          <span>Photo coming soon</span>
+        </div>
+        <div class="meta"><h3>Fire Safety at Work</h3><div class="issuer">Abacus International HSE Services — 2024</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap">
+    <h2 class="section-title reveal">Experience</h2>
+    <div class="timeline">
+      <div class="tl-item current reveal">
+        <div class="when">DEC 2025 — PRESENT</div>
+        <h3>Safety Officer, M. Saddique Ch &amp; Co (MSC)</h3>
+        <div class="where">Sargodha, Pakistan</div>
+        <p>Site-level HSE monitoring, worker inductions, and inspection records for an active project.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">MAR 2025 — OCT 2025</div>
+        <h3>Safety Assistant, Tayyab Manzoor Tarar (TMT)</h3>
+        <div class="where">Lahore, Pakistan</div>
+        <p>Supported permit-to-work issuance and daily site safety walks.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">JAN 2024 — FEB 2025</div>
+        <h3>Safety Officer, NESPAK</h3>
+        <div class="where">Karachi, Pakistan</div>
+        <p>Started HSE career on infrastructure design-and-supervision projects.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sitework">
+  <div class="wrap">
+    <h2 class="section-title reveal">Site Work</h2>
+    <p class="section-sub reveal">On site — safety documentation and PPE compliance.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal">
+        <div class="thumb wide"><img src="site-1.jpg" alt="Reviewing site safety documentation"></div>
+        <div class="meta"><h3>Site safety documentation</h3><div class="issuer">Induction &amp; toolbox records</div></div>
+      </div>
+      <div class="gallery-item reveal">
+        <div class="thumb wide"><img src="site-2.jpg" alt="Site workforce PPE compliance check"></div>
+        <div class="meta"><h3>PPE compliance check</h3><div class="issuer">Site team briefing — MSC, Sargodha</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="toolbox">
+  <div class="wrap">
+    <h2 class="section-title reveal">HSE Toolbox</h2>
+    <p class="section-sub reveal">The core skills behind the certifications.</p>
+    <div class="comp-grid">
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="3" width="14" height="18" rx="1"/><rect x="9" y="1" width="6" height="3" rx="1"/><path d="M8 10l2 2 4-4"/><line x1="8" y1="16" x2="16" y2="16"/></svg>
+        <div><h3>Job Safety Analysis (JSA)</h3><p>Breaking tasks into steps and controls before work starts.</p></div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="13" rx="1"/><circle cx="12" cy="12.5" r="3"/><path d="M8 6V4h8v2"/></svg>
+        <div><h3>Permit-to-Work (PTW)</h3><p>Issuing and closing permits for hazardous tasks.</p></div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 3v6c0 5-3 7.5-7 9-4-1.5-7-4-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg>
+        <div><h3>Risk Assessment</h3><p>Rating hazards and setting controls that hold up on site.</p></div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="4" width="12" height="16" rx="6"/><line x1="9" y1="9" x2="15" y2="9"/></svg>
+        <div><h3>Confined Space Entry</h3><p>Entry permits, atmospheric testing, and standby rescue plans.</p></div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="6" y1="2" x2="6" y2="22"/><line x1="18" y1="2" x2="18" y2="22"/><line x1="6" y1="6" x2="18" y2="6"/><line x1="6" y1="11" x2="18" y2="11"/><line x1="6" y1="16" x2="18" y2="16"/></svg>
+        <div><h3>Work at Height</h3><p>Fall protection, scaffold checks, and edge-protection audits.</p></div>
+      </div>
+      <div class="comp reveal">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="10" cy="10" r="6"/><line x1="14.5" y1="14.5" x2="20" y2="20"/></svg>
+        <div><h3>Incident Investigation</h3><p>Root-cause analysis and corrective-action tracking.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2 class="section-title reveal">Education</h2>
+    <div class="timeline">
+      <div class="tl-item current reveal">
+        <div class="when">IN PROGRESS</div>
+        <h3>BS English</h3>
+        <div class="where">Virtual University of Pakistan — Haroonabad, Punjab</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">2023</div>
+        <h3>Higher Secondary School Certificate — Pre-Medical</h3>
+        <div class="where">Govt. Associate College, Marot | BISE Bahawalpur</div>
+      </div>
+      <div class="tl-item reveal">
+        <div class="when">2020</div>
+        <h3>Secondary School Certificate — Science (Grade A)</h3>
+        <div class="where">Govt. High School Chak 319/HR, Fort Abbas | BISE Bahawalpur</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="relocate">
+  <div class="wrap">
+    <h2 class="reveal">Open to Relocate</h2>
+    <p class="section-sub reveal">Targeting Safety Officer / HSE roles with contractors across:</p>
+    <div class="countries">
+      <div class="country reveal"><div class="flag">🇸🇦</div><div class="name">Saudi Arabia</div></div>
+      <div class="country reveal"><div class="flag">🇦🇪</div><div class="name">United Arab Emirates</div></div>
+      <div class="country reveal"><div class="flag">🇶🇦</div><div class="name">Qatar</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="stripe"></div>
+<div class="contact" id="contact">
+  <div class="wrap">
+    <section style="padding-top:60px;">
+      <h2 class="reveal">Looking for a Safety Officer?</h2>
+      <p class="reveal">Let's build a safer workplace together. Based in Punjab, Pakistan — open to relocate for the right HSE role.</p>
+      <div class="actions">
+        <!-- Replace href="#" below with your real LinkedIn profile link -->
+        <a class="btn primary" href="mailto:muhammadatharhse@gmail.com">Email Me</a>
+        <a class="btn" href="tel:+923414826804">Call</a>
+        <a class="btn" href="https://wa.me/923414826804" target="_blank" rel="noopener">WhatsApp</a>
+        <a class="btn" href="#" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv.pdf" download>Download CV</a>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>Muhammad Athar — HSE &amp; Safety Officer — Punjab, Pakistan</p>
+  </div>
+</footer>
+
+<a class="float-contact" href="#contact" id="floatContact">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v13H7l-3 3V4z"/></svg>
+  Contact
+</a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img id="lightboxImg" src="" alt="">
+</div>
+
+<script>
+(function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var revealEls = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window && !reduceMotion){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.15});
+    revealEls.forEach(function(el){ io.observe(el); });
+  } else {
+    revealEls.forEach(function(el){ el.classList.add('in'); });
+  }
+
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-target'), 10);
+    var suffix = el.getAttribute('data-suffix') || '';
+    if(reduceMotion){ el.textContent = target + suffix; return; }
+    var duration = 1200, start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      el.textContent = Math.floor(progress * target) + suffix;
+      if(progress < 1) requestAnimationFrame(step);
+      else el.textContent = target + suffix;
+    }
+    requestAnimationFrame(step);
+  }
+  var statsBox = document.querySelector('.stats');
+  if(statsBox && 'IntersectionObserver' in window){
+    var counterIO = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          document.querySelectorAll('.counter').forEach(animateCounter);
+          counterIO.unobserve(entry.target);
+        }
+      });
+    }, {threshold:0.4});
+    counterIO.observe(statsBox);
+  } else {
+    document.querySelectorAll('.counter').forEach(animateCounter);
+  }
+
+  var floatBtn = document.getElementById('floatContact');
+  var hero = document.getElementById('hero');
+  var contact = document.getElementById('contact');
+  var heroVisible = true, contactVisible = false;
+  function updateFloat(){ floatBtn.classList.toggle('show', !heroVisible && !contactVisible); }
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      heroVisible = entries[0].isIntersecting; updateFloat();
+    }, {threshold:0}).observe(hero);
+    new IntersectionObserver(function(entries){
+      contactVisible = entries[0].isIntersecting; updateFloat();
+    }, {threshold:0}).observe(contact);
+  }
+
+  if(window.matchMedia('(hover: hover)').matches && !reduceMotion){
+    document.querySelectorAll('.comp').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var x = e.clientX - r.left, y = e.clientY - r.top;
+        var rx = ((y - r.height/2) / (r.height/2)) * -4;
+        var ry = ((x - r.width/2) / (r.width/2)) * 4;
+        card.style.transform = 'perspective(600px) rotateX(' + rx + 'deg) rotateY(' + ry + 'deg) translateY(-2px)';
+      });
+      card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
+    });
+  }
+
+  /* lightbox for certificate & site photos */
+  var lightbox = document.getElementById('lightbox');
+  var lightboxImg = document.getElementById('lightboxImg');
+  function closeLB(){ lightbox.classList.remove('open'); lightboxImg.src=''; }
+  document.querySelectorAll('.gallery-item .thumb img').forEach(function(img){
+    img.addEventListener('click', function(){
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+    });
+  });
+  document.getElementById('lightboxClose').addEventListener('click', closeLB);
+  lightbox.addEventListener('click', function(e){ if(e.target === lightbox) closeLB(); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeLB(); });
+
+  if(!reduceMotion){
+    var canvas = document.getElementById('heroCanvas');
+    var ctx = canvas.getContext('2d');
+    var W, H, particles = [];
+    var COUNT = 42, LINK_DIST = 120;
+    function resize(){
+      W = canvas.width = hero.clientWidth;
+      H = canvas.height = hero.clientHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+    for(var i=0; i<COUNT; i++){
+      particles.push({
+        x: Math.random()*W,
+        y: Math.random()*H,
+        vx: (Math.random()-0.5)*0.35,
+        vy: (Math.random()-0.5)*0.35,
+        r: Math.random()*1.6+0.6
+      });
+    }
+    var running = !document.hidden;
+    document.addEventListener('visibilitychange', function(){
+      running = !document.hidden;
+      if(running) requestAnimationFrame(draw);
+    });
+    function draw(){
+      if(!running) return;
+      ctx.clearRect(0,0,W,H);
+      for(var i=0;i<particles.length;i++){
+        var p = particles[i];
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0) p.x=W; if(p.x>W) p.x=0;
+        if(p.y<0) p.y=H; if(p.y>H) p.y=0;
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+        ctx.fillStyle = 'rgba(59,157,255,0.55)';
+        ctx.fill();
+      }
+      for(var a=0;a<particles.length;a++){
+        for(var b=a+1;b<particles.length;b++){
+          var dx = particles[a].x-particles[b].x, dy = particles[a].y-particles[b].y;
+          var dist = Math.sqrt(dx*dx+dy*dy);
+          if(dist < LINK_DIST){
+            ctx.strokeStyle = 'rgba(59,157,255,' + (0.18*(1-dist/LINK_DIST)) + ')';
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[a].x, particles[a].y);
+            ctx.lineTo(particles[b].x, particles[b].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    requestAnimationFrame(draw);
+  }
+})();
+</script>
+
+</body>
+</html>
